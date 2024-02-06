@@ -4,8 +4,6 @@ const PORT = process.env.PORT || 3001;
 const cors = require("cors");
 const USAcities = require("./db/USAcities");
 
-dotenv.config();
-
 app.use(express.json());
 app.use(cors());
 
