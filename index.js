@@ -2,14 +2,14 @@ const express = require("express");
 const app = express();
 const PORT = process.env.PORT || 3001;
 const cors = require("cors");
-const USAcities = require("./db/USAcities");
+const cities = require("./db/cities");
 
 app.use(express.json());
 app.use(cors());
 
 app.get("/cities/:state", (req, res) => {
   try {
-    const filtered = USAcities.filter((row) => row.state === req.params.state);
+    const filtered = cities.filter((row) => row.state === req.params.state);
     res.send(filtered);
   } catch (error) {
     console.log(error);
